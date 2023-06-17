@@ -1,0 +1,903 @@
+/*font-family: 'Heebo', sans-serif;
+font-family: 'Nunito', sans-serif;*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Heebo', sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+ul{
+    padding:0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration:none;
+}
+button{
+    border:none; 
+}
+button:focus{
+    outline: none;
+}
+
+
+/********** Template CSS **********/
+:root {
+    --primary: #06BBCC;
+    --light: #F0FBFC;
+    --dark: #181d38;
+    --btn-hover-color:#22c3d3;
+    --transition: 0.3s linear;
+    --sublink-hover-color: #e9ecef;
+    --text-color: #52565b;
+}
+
+/* --- Reusable code --- */
+
+.wrapper{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.section{
+    padding:100px 0 0;
+}
+
+.title{
+    color: var(--primary);
+}
+.sec-height{
+    height:522px;
+}
+
+/* --- Header --- */
+.header-sec{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 60px;
+    z-index: 9999;
+    background: #fff;
+}
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+/*    background: rgb(0 0 0 / 0.85);
+*/
+}
+
+.manue-links{
+    display: flex;
+    align-items: center;
+}
+/*.sub-links{
+    display: none;
+}*/
+.manue-btn{
+    display: none;   
+}
+.logo a{
+    padding-left: 40px;
+    color: var(--primary);
+    font-size: 35px;
+    font-weight: 500;
+    font-family: 'Nunito', sans-serif;
+}
+.join-link a{
+    background: var(--primary);
+    padding: 19px 40px 19px 40px;
+    transition: var(--transition);
+    color:#fff;
+}
+.join-link a:hover{
+    background: var(--btn-hover-color);
+}
+nav ul li{
+    display:inline-block;
+    margin-right: 25px; 
+}
+nav ul li a{
+    font-size: 16px;
+    font-weight: 500;
+    color:var(--dark);
+    transition: var(--transition);
+    padding: 19px 0;
+}
+nav ul li a:hover{
+    color:var(--primary);
+}
+.page-manue{
+    position: relative;
+}
+.sub-links{
+    position: absolute;
+    top: 41px;
+    left:0;
+    height: auto;
+    width:150px;
+    box-shadow: 0 50px 100px rgb(0 0 0 / 12%);
+    padding:  10px 0 10px 0;
+    transform: scale(1, 0);
+    transform-origin: 0 0;
+    opacity: 0;
+    visibility: hidden; 
+    transition: var(--transition);
+    background: #fff;
+}
+.page-manue:hover .sub-links{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.sub-links li{
+    width: 100%;
+    padding: 0 10px;
+}
+.sub-links li a{
+   display: block;
+   line-height: 30px;
+   padding: 0;   
+   transition: var(--transition);
+   padding-left:10px;
+   border-radius: 5px;
+   color: var(--dark); 
+   font-weight: normal;
+}
+.sub-links li a:hover{
+    background: var(--sublink-hover-color);
+    color: var(--dark);
+}
+
+
+/* --- Hero Section --- */
+
+.item{
+    position: relative;
+}
+.caption{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(24, 29, 56, .7);
+}
+.caption .wrapper{
+    height: 100%;
+}
+/*.content{
+    display:flex;
+    width: 600px;
+    height: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: center;
+}*/
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100%;
+    width: 800px;
+}
+.content h4{
+    font-weight: 800;
+    font-size: 25px;
+    font-family: 'Nunito', sans-serif;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.content h1{
+ font-weight: 800;
+    font-size: 60px;
+    font-family: 'Nunito', sans-serif;
+    color: #fff;
+    margin-bottom: 20px;   
+}
+.content p{
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.btn{
+    display: inline-block;
+    line-height: 55px;
+    padding: 0 35px;
+    background: var(--primary);
+    color: #fff;
+    transition: all 0.3s ease; 
+}
+.join-now{
+    margin-left: 10px;
+    background: #fff;
+    color: var(--dark);
+}
+
+.hero-links .btn:hover{
+    background: var(--btn-hover-color);
+    transition: var(--transition)
+}
+.hero-links .join-now:hover{
+    background: none;
+    color: #fff;
+    border: 1px solid #fff;
+    transition: 0.3s ease;
+}
+
+.slider{
+    position: relative;
+    margin-top: 60px;
+}
+
+.slider .slick-prev{
+    position: absolute;
+    top: 45%;
+    right: 20%;
+    height: 50px;
+    width: 50px;
+    background: transparent;
+    border: 1px solid #fff;
+    transition: var(--transition);
+    font-size: 0;
+    z-index: 1;
+}
+.slider .slick-prev::after{
+    content: '\f104';
+    font-family:'FontAwesome';
+    font-size:22px;
+    display: block;
+    line-height: 30px;
+    color: #fff;
+}
+
+.slider .slick-next{
+    position: absolute;
+    top: 52%;
+    right: 20%;
+    height: 50px;
+    width: 50px;
+    background: transparent;
+    border: 1px solid #fff;
+    transition: var(--transition);
+    font-size: 0;
+    z-index: 1;
+}
+
+.slider .slick-next::after{
+    content: '\f105';
+    font-family:'FontAwesome';
+    font-size:22px;
+    display: block;
+    line-height: 30px;
+    color: #fff;
+}
+
+.slider .slick-next:hover{
+    background: var(--primary);
+    border: 1px solid var(--primary);
+}
+.slider .slick-prev:hover{
+    background: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+
+/* --- Products Section --- */
+.product-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+}
+.product-content{
+    background: var(--light);
+    padding:50px 30px;
+    text-align: center; 
+    transition: var(--transition);
+}
+.product-content p{
+    color: var(--text-color);
+    transition: var(--transition);
+}
+.product-content h5{
+    font-size: 18px;
+    margin: 10px 0;
+    font-weight: 600;
+    font-family: 'Nunito', sans-serif;
+}
+.product-icon i{
+    color: var(--primary);
+    font-size: 30px;
+}
+.product-content:hover{
+    transform: translatey(-20px);
+    background: var(--primary);
+    color: #fff;
+}
+.product-content:hover .product-icon i{
+    color: #fff;
+} 
+.product-content:hover p{
+    color: #fff;
+}
+
+.aboutUs-container{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:30px;
+}
+
+.aboutUs-container .left img{
+    width: 100%;    
+}
+
+.right .title{
+    position: relative;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+}
+
+.right .title::after{
+   content: '';
+    position: absolute;
+    top: 8px;
+    left: 100px;
+    height: 2px;
+    width: 40px;
+    background: var(--primary);
+    border-radius: 15px;
+}
+.right .title::before{
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 100px;
+    height: 2px;
+    width: 58px;
+    background: var(--primary);
+    border-radius: 15px;  
+}
+.right h3{
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 39px;
+    font-family: 'Nunito', sans-serif;
+    color: var(--dark);
+}
+.right p{
+    color: var(--text-color); 
+}
+.abt-para{
+    margin-bottom: 20px;
+}
+.abt-para1{
+ margin-bottom: 15px;   
+}
+.subContent-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+.subContent-container ul li{
+    color: var(--text-color);
+    margin-bottom: 12px;
+}
+.subContent-container ul li i{
+    color: var(--primary);
+}
+.left{
+    position: relative;
+}
+.left img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.abt-btn{
+    margin-top: 25px;
+    font-size: 16px;
+    line-height: 45px;
+}
+
+/* --- Course Categories Section --- */
+.courses-flexBox{
+    display: flex;
+    gap:20px;
+}
+.design-editing-course{
+    display: flex;
+    gap:20px;
+}
+.left-courses{
+    width: 60%;
+}
+.right-courses{
+    width:40%;
+
+}
+.left-courses img{
+    width: 100%;
+    object-fit: cover;
+}
+.right-courses img{
+    
+}
+.design-editing-course{
+    margin-top: 10px;
+}
+.web-course{
+    overflow: hidden;
+    position: relative;
+}
+.web-course img{
+    transition: var(--transition);
+    transform: scale(1);
+}
+.web-course:hover img{
+ transform: scale(1.1);   
+}
+.graphic{
+    overflow: hidden;
+    position: relative;
+}
+.graphic img{
+  transition: var(--transition);
+  transform: scale(1);
+}
+.graphic:hover img{
+   transform: scale(1.1); 
+}
+.video{
+    overflow: hidden;
+    position: relative;
+}
+.video img{
+  transition: var(--transition);
+  transform: scale(1);
+}
+.video:hover img{
+   transform: scale(1.1); 
+}
+
+.online-marketing{
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+.online-marketing img{
+    position: absolute;
+    width: 100%;
+    height: 99%;
+    object-fit: cover;
+    transition: var(--transition);
+    transform: scale(1);
+}
+.online-marketing:hover img{
+   transform: scale(1.1); 
+}
+/*.online-marketing img:hover .{
+   transform: scale(1.1); 
+}*/
+.marketing-link{
+    position: relative;
+    display: block;
+    height: 100%;
+}
+
+.markt-course{
+    position: absolute;
+    bottom: 8px;
+    right: 0px;
+    height: auto;
+    width: auto;
+    background: #fff;
+    text-align: center;
+    padding: 5px 31px;
+}
+.markt-course span{
+    display: block;
+    color: var(--primary);
+}
+.course-title{
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.courses-container h5  {
+   position: relative;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    color: var(--primary);
+    height: 33px;
+    width: 150px;
+    background: #fff;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 30px;
+}
+.courses-container h5::after{
+        content: '';
+    position: absolute;
+    top: 9px;
+    left: -43px;
+    width: 230px;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 15px;
+    margin: 0 auto;
+    z-index: -1;
+}
+.courses-container h5::before{
+    content: '';
+    position: absolute;
+    top: 17px;
+    left: -56px;
+    width: 260px;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 15px;
+    margin: 0 auto;
+    z-index: -1;
+}
+
+.courses-container h2{
+    text-align: center;
+    margin: 10px 0 50px;
+    font-size: 39px;
+    font-family: 'Nunito', sans-serif;
+    color: var(--dark);
+}
+
+/* --- popular Courses Section --- */
+
+.courses-price-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
+}
+
+.card{
+    background: var(--light);
+    text-align: center;
+}
+
+.card img{
+    width: 100%;
+}
+.crs-price{
+    color: var(--dark);
+    font-size: 35px;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    margin-top: 10px;
+}
+.price-rating small i{
+    color: var(--primary);
+}
+
+.course-content h3{
+    margin:  10px 0 10px 0;
+    font-size: 21px;
+    color: var(--dark);
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    padding: 0 30px;
+}
+.course-info ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--sublink-hover-color);
+}
+.course-info ul li{
+    color:var(--text-color);
+    padding: 10px 10px;
+}
+.course-info ul li i{
+    color: var(--primary);
+}
+.course-info ul li:first-child{
+    padding-left: 20px;
+}
+.course-info ul li:last-child{
+    padding-right: 20px;
+}
+.border{
+    border-left: 1px solid var(--sublink-hover-color);
+    border-right: 1px solid var(--sublink-hover-color);
+    padding: 0 10px;
+}
+
+.price-img{
+    position: relative;
+}
+.price-links{
+    position: absolute;
+    bottom: 20px;
+    left: 24%;
+    height: auto;
+    width: 215px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    /*background: #999;*/
+}
+.btn-price{
+    display: inline-block;
+    line-height: 30px;
+    background: var(--primary);
+    color: #fff;
+    font-size: 15px;
+}
+.brd-radius1{
+    border-top-left-radius: 23px;
+    border-bottom-left-radius: 23px;
+    border-right: 1px solid #fff;
+    padding:  0 10px 0 15px; 
+}
+.brd-radius2{
+    border-top-right-radius: 23px;
+    border-bottom-right-radius: 23px;
+    padding:  0 15px 0 10px;
+}
+.price-img{
+    overflow: hidden;
+    transform: scale(1);
+    
+}
+.price-img img{
+    transition: var(--transition);
+}
+.card:hover img{
+    transform: scale(1.1);
+}
+.popular-courses h5{
+    position: relative;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    color: var(--primary);
+    height: 33px;
+    width: 150px;
+    background: #fff;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 30px;
+}
+.popular-courses h5::after{
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: -43px;
+    width: 230px;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 15px;
+    margin: 0 auto;
+    z-index: -1;
+}
+.popular-courses h5::before{
+    content: '';
+    position: absolute;
+    top: 17px;
+    left: -56px;
+    width: 260px;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 15px;
+    margin: 0 auto;
+    z-index: -1;
+}
+.popular-courses h2{
+    text-align: center;
+    margin: 10px 0 50px;
+    font-size: 39px;
+    font-family: 'Nunito', sans-serif;
+    color: var(--dark);
+}
+
+/* --- Instructor Section --- */
+
+.inst-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; 
+}
+.inst-card{
+    background: var(--light);
+    text-align: center;
+}
+.inst-card img{
+    width: 100%;
+}
+.professors{
+    position: relative;
+}
+.inst-link{
+    position: absolute;
+    bottom: -3px;
+    left: 28%;
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+    background: var(--light);
+    z-index: 2;
+}
+.inst-link a{
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    background: var(--primary);
+    line-height: 32px;
+    color: #fff;
+    transition: var(--transition);
+}
+.inst-link a:hover{
+    background: var(--btn-hover-color);
+}
+.inst-link a i{
+    position: relative;
+       z-index: 2;
+}
+.professors-info{
+    padding: 20px 0 10px 0;
+    z-index: -2;
+}
+.professors-info h3{
+    font-family: 'Nunito', sans-serif;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.professors{
+    overflow: hidden;
+    transform: scale(1);
+}
+.professors img{
+    transition: var(--transition);
+}
+.inst-card:hover  img{
+    transform: scale(1.1);   
+}
+
+.instructors h5{
+    position: relative;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    color: var(--primary);
+    height: 33px;
+    width: 150px;
+    background: #fff;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 30px;
+}
+
+.instructors h5::after{
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: -43px;
+    width: 230px;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 15px;
+    margin: 0 auto;
+    z-index: -1;
+}
+
+.instructors h5::before{
+    content: '';
+    position: absolute;
+    top: 17px;
+    left: -56px;
+    width: 260px;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 15px;
+    margin: 0 auto;
+    z-index: -1;
+}
+.instructors h2{
+    text-align: center;
+    margin: 10px 0 50px;
+    font-size: 39px;
+    font-family: 'Nunito', sans-serif;
+    color: var(--dark);
+}
+
+/* --- Testimoinals Section --- */
+
+.testimonials-container h5{
+    position: relative;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    color: var(--primary);
+    height: 33px;
+    width: 150px;
+    background: #fff;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 30px;
+}
+.testimonials-container h5::after{
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: -43px;
+    width: 230px;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 15px;
+    margin: 0 auto;
+    z-index: -1;
+}
+.testimonials-container h5::before{
+    content: '';
+    position: absolute;
+    top: 17px;
+    left: -56px;
+    width: 260px;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 15px;
+    margin: 0 auto;
+    z-index: -1;
+}
+
+.testimonials-container h2{
+    text-align: center;
+    margin: 10px 0 50px;
+    font-size: 39px;
+    font-family: 'Nunito', sans-serif;
+    color: var(--dark);
+}
+/*.slider-img img{
+    border-radius: 50px;
+    border: 1px solid var(--light);
+    position: relative;
+}
+.slider-img img::after{
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100px;
+    width: 100px;
+    border: 1px solid var(--light);
+    border-radius: 50px;
+    z-index: -1;
+}*/
